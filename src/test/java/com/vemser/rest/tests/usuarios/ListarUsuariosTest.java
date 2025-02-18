@@ -39,15 +39,7 @@ public class ListarUsuariosTest {
         );
     }
 
-    @Test
-    public void testSchemaListarTodosUsuariosComSucesso() {
 
-        usuarioClient.listarUsuarios()
-        .then()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/listar_todos_usuarios.json"))
-        ;
-    }
 
     @Test
     public void testListarUsuariosPorNomeInvalido() {

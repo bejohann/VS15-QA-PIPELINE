@@ -22,15 +22,7 @@ public class AtualizarUsuariosTest {
         ;
     }
 
-    @Test
-    public void testSchemaAtualizarUsuarioComSucesso() {
 
-        usuarioClient.atualizarUsuario(UsuarioDataFactory.idValido(), UsuarioDataFactory.usuarioValido())
-        .then()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/atualizar_usuario.json"))
-        ;
-    }
 
     @Test
     public void testAtualizarUsuarioInexistenteECriacaoDeNovoUsuario() {

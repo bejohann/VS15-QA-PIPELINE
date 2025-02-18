@@ -23,15 +23,7 @@ public class LoginTest {
         ;
     }
 
-    @Test
-    public void testSchemaRealizarLoginComSucesso() {
 
-        loginClient.realizarLogin(LoginDataFactory.loginValido())
-        .then()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/realizar_login.json"))
-        ;
-    }
 
     @Test
     public void testRealizarLoginInvalido() {

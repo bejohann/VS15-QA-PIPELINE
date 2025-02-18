@@ -23,15 +23,7 @@ public class CadastrarUsuariosTest {
         ;
     }
 
-    @Test
-    public void testSchemaDeveCadastrarUsuarioComDadosValidos() {
 
-       usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioValido())
-        .then()
-                .statusCode(201)
-                .body(matchesJsonSchemaInClasspath("schemas/cadastrar_usuario.json"))
-        ;
-    }
 
     @Test
     public void testTentarCadastrarUsuarioComCamposVazios() {

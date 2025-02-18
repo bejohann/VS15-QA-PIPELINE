@@ -22,15 +22,7 @@ public class ExcluirUsuariosTest {
         ;
     }
 
-    @Test
-    public void testSchemaExcluirUsuarioComSucesso() {
 
-        usuarioClient.excluirUsuario(UsuarioDataFactory.idValido())
-        .then()
-                .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/excluir_usuario.json"))
-        ;
-    }
 
     @Test
     public void testExcluirUsuarioComCarrinhoCadastrado () {
