@@ -31,7 +31,6 @@ jobs:
   Contract-test:
     runs-on: ubuntu-latest
     needs: Health-check
-    if: needs.Health-check.result != 'failed'
     steps:
       - name: Run Contract tests
         run: mvn test -Dtest=ContratoTest
