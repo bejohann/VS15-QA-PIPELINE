@@ -1,4 +1,4 @@
-package com.vemser.rest.tests.usuarios;
+package com.vemser.rest.tests.functional.usuarios;
 
 import com.vemser.rest.client.UsuarioClient;
 import com.vemser.rest.data.factory.UsuarioDataFactory;

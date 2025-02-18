@@ -1,4 +1,4 @@
-package com.vemser.rest.tests.login;
+package com.vemser.rest.tests.functional.login;
 
 import com.vemser.rest.client.LoginClient;
 import com.vemser.rest.data.factory.LoginDataFactory;
