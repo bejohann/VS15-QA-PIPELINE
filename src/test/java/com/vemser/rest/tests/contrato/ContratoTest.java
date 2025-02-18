@@ -18,7 +18,7 @@ public class ContratoTest {
     public void testSchemaRealizarLoginComSucesso() {
 
         loginClient.realizarLogin(LoginDataFactory.loginValido())
-                .then()
+        .then()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/realizar_login.json"))
         ;
@@ -28,7 +28,7 @@ public class ContratoTest {
     public void testSchemaAtualizarUsuarioComSucesso() {
 
         usuarioClient.atualizarUsuario(UsuarioDataFactory.idValido(), UsuarioDataFactory.usuarioValido())
-                .then()
+        .then()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/atualizar_usuario.json"))
         ;
@@ -38,7 +38,7 @@ public class ContratoTest {
     public void testSchemaDeveCadastrarUsuarioComDadosValidos() {
 
         usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioValido())
-                .then()
+        .then()
                 .statusCode(201)
                 .body(matchesJsonSchemaInClasspath("schemas/cadastrar_usuario.json"))
         ;
@@ -48,7 +48,7 @@ public class ContratoTest {
     public void testSchemaExcluirUsuarioComSucesso() {
 
         usuarioClient.excluirUsuario(UsuarioDataFactory.idValido())
-                .then()
+        .then()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/excluir_usuario.json"))
         ;
@@ -58,7 +58,7 @@ public class ContratoTest {
     public void testSchemaListarTodosUsuariosComSucesso() {
 
         usuarioClient.listarUsuarios()
-                .then()
+        .then()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/listar_todos_usuarios.json"))
         ;
