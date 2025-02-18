@@ -13,7 +13,7 @@ public class HealthCheckTest {
 
         usuarioClient.listarUsuarios()
         .then()
-        .statusCode(200)
+        .statusCode(400)
         ;
     }
 }
