@@ -3,6 +3,7 @@ package com.vemser.rest.tests.functional.usuarios;
 import com.vemser.rest.client.UsuarioClient;
 import com.vemser.rest.data.factory.UsuarioDataFactory;
 import com.vemser.rest.utils.constants.UsuariosConstants;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -13,6 +14,7 @@ public class ExcluirUsuariosTest {
     private UsuarioClient usuarioClient = new UsuarioClient();
 
     @Test
+    @Tag("Funcional")
     public void testDeveExcluirUsuarioComSucesso() {
 
         usuarioClient.excluirUsuario(UsuarioDataFactory.idValido())
@@ -25,6 +27,7 @@ public class ExcluirUsuariosTest {
 
 
     @Test
+    @Tag("Funcional")
     public void testExcluirUsuarioComCarrinhoCadastrado () {
         String idUsuario = "0uxuPY0cbmQhpEz1";
 
@@ -37,6 +40,7 @@ public class ExcluirUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testExcluirUsuarioInvalido() {
 
         usuarioClient.excluirUsuario(UsuarioDataFactory.idInvalido())

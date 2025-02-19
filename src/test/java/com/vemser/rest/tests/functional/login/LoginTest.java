@@ -3,6 +3,7 @@ package com.vemser.rest.tests.functional.login;
 import com.vemser.rest.client.LoginClient;
 import com.vemser.rest.data.factory.LoginDataFactory;
 import com.vemser.rest.utils.constants.LoginConstants;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -13,6 +14,7 @@ public class LoginTest {
     private LoginClient loginClient = new LoginClient();
 
     @Test
+    @Tag("Funcional")
     public void testDeveRealizarLoginComSucesso() {
 
         loginClient.realizarLogin(LoginDataFactory.loginValido())
@@ -26,6 +28,7 @@ public class LoginTest {
 
 
     @Test
+    @Tag("Funcional")
     public void testRealizarLoginInvalido() {
 
         loginClient.realizarLogin(LoginDataFactory.loginInvalido())
@@ -36,6 +39,7 @@ public class LoginTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testRealizarLoginComCamposVazios () {
 
         loginClient.realizarLogin(LoginDataFactory.loginComCamposVazios())

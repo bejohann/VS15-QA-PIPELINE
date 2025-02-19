@@ -6,6 +6,7 @@ import com.vemser.rest.model.UsuarioResponse;
 import com.vemser.rest.utils.constants.UsuariosConstants;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class ListarUsuariosTest {
     private UsuarioClient usuarioClient = new UsuarioClient();
 
     @Test
+    @Tag("Funcional")
     public void testListarTodosUsuariosComSucesso() {
 
         Response response = usuarioClient.listarUsuarios()
@@ -42,6 +44,7 @@ public class ListarUsuariosTest {
 
 
     @Test
+    @Tag("Funcional")
     public void testListarUsuariosPorNomeInvalido() {
 
         usuarioClient.listarUsuarioPorNome(UsuarioDataFactory.nomeInvalido())
@@ -54,6 +57,7 @@ public class ListarUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testListarUsuariosPorEmailInvalido() {
 
         usuarioClient.listarUsuarioPorNome(UsuarioDataFactory.emailInvalido())
@@ -65,6 +69,7 @@ public class ListarUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testBuscarUsuariosPorIdComSucesso() {
 
         UsuarioResponse response = usuarioClient.listarUsuarioPorId(UsuarioDataFactory.idValido())
@@ -83,6 +88,7 @@ public class ListarUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testSchemaBuscarUsuariosPorId() {
 
         usuarioClient.listarUsuarioPorId(UsuarioDataFactory.idValido())
@@ -93,6 +99,7 @@ public class ListarUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testBuscarUsuarioPorIdInvalido() {
 
         usuarioClient.listarUsuarioPorId(UsuarioDataFactory.idInvalido())

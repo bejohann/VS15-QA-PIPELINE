@@ -6,6 +6,7 @@ import com.vemser.rest.client.UsuarioClient;
 import com.vemser.rest.data.factory.LoginDataFactory;
 import com.vemser.rest.data.factory.ProdutoDataFactory;
 import com.vemser.rest.data.factory.UsuarioDataFactory;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -17,6 +18,7 @@ public class ContratoTest {
     ProdutoClient produtoClient = new ProdutoClient();
 
     @Test
+    @Tag("Contrato")
     public void testSchemaRealizarLoginComSucesso() {
 
         loginClient.realizarLogin(LoginDataFactory.loginValido())
@@ -27,6 +29,7 @@ public class ContratoTest {
     }
 
     @Test
+    @Tag("Contrato")
     public void testSchemaAtualizarUsuarioComSucesso() {
 
         usuarioClient.atualizarUsuario(UsuarioDataFactory.idValido(), UsuarioDataFactory.usuarioValido())
@@ -37,6 +40,7 @@ public class ContratoTest {
     }
 
     @Test
+    @Tag("Contrato")
     public void testSchemaDeveCadastrarUsuarioComDadosValidos() {
 
         usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioValido())
@@ -47,6 +51,7 @@ public class ContratoTest {
     }
 
     @Test
+    @Tag("Contrato")
     public void testSchemaExcluirUsuarioComSucesso() {
 
         usuarioClient.excluirUsuario(UsuarioDataFactory.idValido())
@@ -57,6 +62,7 @@ public class ContratoTest {
     }
 
     @Test
+    @Tag("Contrato")
     public void testSchemaListarTodosUsuariosComSucesso() {
 
         usuarioClient.listarUsuarios()
@@ -67,6 +73,7 @@ public class ContratoTest {
     }
 
     @Test
+    @Tag("Contrato")
     public void testSchemaDeveCadastrarProdutoComSucesso() {
 
         produtoClient.cadastrarProduto(LoginDataFactory.tokenAdministrador(), ProdutoDataFactory.produtoValido())

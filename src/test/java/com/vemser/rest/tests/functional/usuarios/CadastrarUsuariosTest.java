@@ -3,6 +3,7 @@ package com.vemser.rest.tests.functional.usuarios;
 import com.vemser.rest.client.UsuarioClient;
 import com.vemser.rest.data.factory.UsuarioDataFactory;
 import com.vemser.rest.utils.constants.UsuariosConstants;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
@@ -13,6 +14,7 @@ public class CadastrarUsuariosTest {
     private UsuarioClient usuarioClient = new UsuarioClient();
 
     @Test
+    @Tag("Funcional")
     public void testDeveCadastrarUsuarioComDadosValidos() {
 
         usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioValido())
@@ -26,6 +28,7 @@ public class CadastrarUsuariosTest {
 
 
     @Test
+    @Tag("Funcional")
     public void testTentarCadastrarUsuarioComCamposVazios() {
 
         usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioComCamposVazios())
@@ -39,6 +42,7 @@ public class CadastrarUsuariosTest {
     }
 
     @Test
+    @Tag("Funcional")
     public void testTentarCadastrarUsuarioComEmailJaCadastrado() {
 
         usuarioClient.cadastrarUsuario(UsuarioDataFactory.usuarioComEmailJaCadastrado())

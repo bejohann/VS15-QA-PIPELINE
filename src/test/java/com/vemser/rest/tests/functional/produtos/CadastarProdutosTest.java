@@ -5,6 +5,7 @@ import com.vemser.rest.data.factory.LoginDataFactory;
 import com.vemser.rest.data.factory.ProdutoDataFactory;
 import com.vemser.rest.model.Produto;
 import com.vemser.rest.utils.constants.ProdutoConstants;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -17,6 +18,7 @@ public class CadastarProdutosTest {
     private ProdutoClient produtoClient = new ProdutoClient();
 
     @Test
+    @Tag("Funcional")
     public void testDeveCadastrarProdutoComSucesso() {
 
         produtoClient.cadastrarProduto(LoginDataFactory.tokenAdministrador(), ProdutoDataFactory.produtoValido())
