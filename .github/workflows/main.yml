@@ -133,7 +133,28 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
           -X POST \
-          -d '{"username": "Test Automation", "content": "Allure Report is now available at: https://qqwewe.github.io/VS15-QA-PIPELINE"}' \
+          -d '{
+          "username": "Pipilaini",
+          "embeds": [
+          {
+            "title": "Deploy do Allure Report!",
+            "description": "O Allure Report está no ar e pronto para ser visto. Click no link abaixo para detalhes.",
+            "url": "https://qqwewe.github.io/VS15-QA-PIPELINE",
+            "color": 3066993,
+            "fields": [
+              {
+                "name": "Status",
+                "value": "✅ Deploy com Sucesso",
+                "inline": true
+              }
+            ],
+            "footer": {
+              "text": "Deploy via GitHub Actions"
+            },
+            "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
+          }
+          ]
+          }' \
           ${{ secrets.DISCORD_WEBHOOK }}
 
     
