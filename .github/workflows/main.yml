@@ -159,5 +159,20 @@ jobs:
           ]
           }' \
           ${{ secrets.DISCORD_WEBHOOK }}
+  CodeQL:
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          queries: +security-extended
+          languages: java
+          build-mode: none
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
     
