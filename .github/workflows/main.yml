@@ -58,6 +58,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Setup Allure
+        uses: trioche/setup-allure@v2.0
+        with:
+          allure_version: '2.20.1'
       - name: Generate Allure Report
         run: |
           allure generate ./allure-results --clean -o allure-report
