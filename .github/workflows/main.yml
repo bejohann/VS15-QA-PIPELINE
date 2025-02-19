@@ -148,27 +148,27 @@ jobs:
             "fields": [
               {
                 "name": "🏗️ Build",
-                "value": "Status: **${{needs.Build.result}}**",
+                "value": "**${{needs.Build.result}}**",
                 "inline": true
               },
               {
               "name": "🩺  Health Check",
-              "value": "Status: **${{needs.Health-check.result}}**",
+              "value": "**${{needs.Health-check.result}}**",
               "inline": true
               },
               {
               "name": "📜 Contrato",
-              "value": "Status: **${{needs.Contract-test.result}}**",
+              "value": "**${{needs.Contract-test.result}}**",
               "inline": true
               },
               {
               "name": "🛠️ Funcional",
-              "value": "Status: **${{needs.Functional-test.result}}**",
+              "value": "**${{needs.Functional-test.result}}**",
               "inline": true
               },
               {
               "name": "📊 Allure Report",
-              "value": "Status: **${{needs.Allure-report.result}}**",
+              "value": "**${{needs.Allure-report.result}}**",
               "inline": true
               },
               {
@@ -178,7 +178,8 @@ jobs:
               }
             ],
             "footer": {
-              "text": "Deploy via GitHub Actions by 👤[**${{ github.actor }}**](https://github.com/${{ github.actor }})"
+              "text": "Deploy via GitHub Actions by 👤 **${{ github.actor }}** (https://github.com/${{ github.actor }})"
+
             },
             "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
           }
