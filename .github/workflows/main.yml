@@ -30,6 +30,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Health Check Test
         run: mvn test -Dtest=HealthCheckTest
+      - name: List allure-results folder
+        run: ls -la allure-results
+
 
   Contract-test:
     runs-on: ubuntu-latest
