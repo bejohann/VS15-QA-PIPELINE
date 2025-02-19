@@ -119,6 +119,10 @@ jobs:
           publish_branch: gh-pages
           publish_dir: allure-history
 
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
+
   Discord-report:
     runs-on: ubuntu-latest
     needs: Allure-report
