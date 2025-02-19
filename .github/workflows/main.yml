@@ -133,7 +133,7 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
           -X POST \
-          -d '{"username": "Test Automation", "content": "Allure Report is now available at: https://qqwewe.github.io/VS15-QA-PIPELINE/index.html"}' \
+          -d '{"username": "Test Automation", "content": "Allure Report is now available at: https://qqwewe.github.io/VS15-QA-PIPELINE"}' \
           ${{ secrets.DISCORD_WEBHOOK }}
 
     
