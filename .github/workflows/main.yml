@@ -180,7 +180,7 @@ jobs:
               "name": "👤 Deploy feito por",
               "value": "[**${{ github.actor }}**](https://github.com/${{ github.actor }})",
               "inline": false
-              },
+              }
             ],
             "footer": {
               "text": "Deploy via GitHub Actions"
