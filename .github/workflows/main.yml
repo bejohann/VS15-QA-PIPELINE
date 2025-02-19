@@ -30,8 +30,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Health Check Test
         run: mvn test -Dtest=HealthCheckTest
-      - name: List allure-results folder
-        run: ls -la allure-results
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
 
 
   Contract-test:
@@ -43,6 +46,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Contract tests
         run: mvn test -Dtest=ContratoTest
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
 
   Functional-test:
     runs-on: ubuntu-latest
@@ -53,6 +61,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Run Functional tests
         run: mvn test -Dtest=com.vemser.rest.tests.functional.**.**
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
 
   Allure-report:
     runs-on: ubuntu-latest
