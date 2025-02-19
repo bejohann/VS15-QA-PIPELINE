@@ -126,14 +126,15 @@ jobs:
     env:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
     steps:
-      - name: Install cypress-discord-reporter
-        run: npm install -g cypress-discord-reporter
-
-      - name: Send Report to Discord via Cypress-Discord-Reporter
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Send Discord Notification
         run: |
-          cypress-discord-reporter \
-          --webhook ${{ secrets.DISCORD_WEBHOOK }} \
-          --report path/to/your-report.json
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{"username": "Test Automation", "content": "Allure Report is now available at: https://qqwewe.github.io/VS15-QA-PIPELINE/index.html"}' \
+          ${{ secrets.DISCORD_WEBHOOK }}
 
     
           
