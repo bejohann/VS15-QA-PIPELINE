@@ -118,4 +118,22 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+
+  Discord-report:
+    runs-on: ubuntu-latest
+    needs: Allure-report
+    if: always()
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    steps:
+      - name: Install cypress-discord-reporter
+        run: npm install -g cypress-discord-reporter
+
+      - name: Send Report to Discord via Cypress-Discord-Reporter
+        run: |
+          cypress-discord-reporter \
+          --webhook ${{ secrets.DISCORD_WEBHOOK }} \
+          --report path/to/your-report.json
+
+    
           
