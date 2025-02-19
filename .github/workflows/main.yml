@@ -6,6 +6,7 @@ permissions:
 on:
   pull_request:
     types: [opened, reopened]
+  workflow_dispatch:
     
 jobs:
   Build:
@@ -124,7 +125,7 @@ jobs:
 
   Discord-report:
     runs-on: ubuntu-latest
-    needs: Allure-report
+    needs: [Allure-report, Functional-test, Contract-test, Health-check, Build]
     if: always()
     env:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
@@ -146,9 +147,13 @@ jobs:
             "color": 3066993,
             "fields": [
               {
-                "name": "Status",
-                "value": "✅ Deploy com Sucesso",
+                "name": "Build",
+                "value": "Status: ${{needs.Build.result}}",
                 "inline": true
+              },
+              {
+              "name": "Health Check"
+              "value": "Status: ${{needs.Health-check.result}}"
               }
             ],
             "footer": {
