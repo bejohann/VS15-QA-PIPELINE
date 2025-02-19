@@ -148,32 +148,32 @@ jobs:
             "fields": [
               {
                 "name": "🏗️ Build",
-                "value": "Status: **${{needs.Build.result}}"**,
+                "value": "Status: **${{needs.Build.result}}**",
                 "inline": true
               },
               {
               "name": "🩺  Health Check",
-              "value": "Status: **${{needs.Health-check.result}}"**,
+              "value": "Status: **${{needs.Health-check.result}}**",
               "inline": true
               },
               {
               "name": "📜 Contrato",
-              "value": "Status: **${{needs.Contract-test.result}}"**,
+              "value": "Status: **${{needs.Contract-test.result}}**",
               "inline": true
               },
               {
               "name": "🛠️ Funcional",
-              "value": "Status: **${{needs.Functional-test.result}}"**,
+              "value": "Status: **${{needs.Functional-test.result}}**",
               "inline": true
               },
               {
               "name": "📊 Allure Report",
-              "value": "Status: **${{needs.Allure-report.result}}"**,
+              "value": "Status: **${{needs.Allure-report.result}}**",
               "inline": true
               },
               {
               "name": "⚡ Evento",
-              "value": "${{ github.event_name }}",
+              "value": "**${{ github.event_name }}**",
               "inline": "true"
               }
             ],
