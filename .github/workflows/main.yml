@@ -2,6 +2,7 @@ name: CI/CD Pipeline
 permissions:
   contents: write
   pages: write
+  security-events: write
 
 on:
   pull_request:
