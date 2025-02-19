@@ -33,7 +33,7 @@ jobs:
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-health-check
           path: allure-results
 
 
@@ -49,7 +49,7 @@ jobs:
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-contract-test
           path: allure-results
 
   Functional-test:
@@ -64,7 +64,7 @@ jobs:
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
+          name: allure-functional-test
           path: allure-results
 
   Allure-report:
@@ -72,6 +72,10 @@ jobs:
     needs: Functional-test
     if: always()
     steps:
+      - name: Download Allure Results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
