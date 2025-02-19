@@ -142,7 +142,7 @@ jobs:
           "embeds": [
           {
             "title": "📢 Deploy do Allure Report!",
-            "description": "O Allure Report está no ar e pronto para ser visto. Click no link no título.\n\n👤 **Deploy feito por:** [**${{ github.actor }}**](https://github.com/${{ github.actor }})",
+            "description": "O Allure Report está no ar e pronto para ser visto. Click no link no título.",
             "url": "https://bejohann.github.io/VS15-QA-PIPELINE",
             "color": 3066993,
             "fields": [
@@ -174,8 +174,13 @@ jobs:
               {
               "name": "⚡ Evento",
               "value": "**${{ github.event_name }}**",
-              "inline": "true"
-              }
+              "inline": true
+              },
+              {
+              "name": "👤 Deploy feito por",
+              "value": "[**${{ github.actor }}**](https://github.com/${{ github.actor }})",
+              "inline": false
+              },
             ],
             "footer": {
               "text": "Deploy via GitHub Actions"
