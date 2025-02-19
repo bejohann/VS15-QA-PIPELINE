@@ -152,8 +152,9 @@ jobs:
                 "inline": true
               },
               {
-              "name": "Health Check"
-              "value": "Status: ${{needs.Health-check.result}}"
+              "name": "Health Check",
+              "value": "Status: ${{needs.Health-check.result}}",
+              "inline": true
               }
             ],
             "footer": {
