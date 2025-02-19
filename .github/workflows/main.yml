@@ -141,44 +141,44 @@ jobs:
           "username": "Megazord QA",
           "embeds": [
           {
-            "title": "Deploy do Allure Report!",
+            "title": "📢 Deploy do Allure Report!",
             "description": "O Allure Report está no ar e pronto para ser visto. Click no link no título.",
             "url": "https://bejohann.github.io/VS15-QA-PIPELINE",
             "color": 3066993,
             "fields": [
               {
-                "name": "Build",
-                "value": "Status: ${{needs.Build.result}}",
+                "name": "🏗️ Build",
+                "value": "Status: **${{needs.Build.result}}"**,
                 "inline": true
               },
               {
-              "name": "Health Check",
-              "value": "Status: ${{needs.Health-check.result}}",
+              "name": "🩺  Health Check",
+              "value": "Status: **${{needs.Health-check.result}}"**,
               "inline": true
               },
               {
-              "name": "Contrato",
-              "value": "Status: ${{needs.Contract-test.result}}",
+              "name": "📜 Contrato",
+              "value": "Status: **${{needs.Contract-test.result}}"**,
               "inline": true
               },
               {
-              "name": "Funcional",
-              "value": "Status: ${{needs.Functional-test.result}}",
+              "name": "🛠️ Funcional",
+              "value": "Status: **${{needs.Functional-test.result}}"**,
               "inline": true
               },
               {
-              "name": "Allure Report",
-              "value": "Status: ${{needs.Allure-report.result}}",
+              "name": "📊 Allure Report",
+              "value": "Status: **${{needs.Allure-report.result}}"**,
               "inline": true
               },
               {
-              "name": "Evento",
+              "name": "⚡ Evento",
               "value": "${{ github.event_name }}",
               "inline": "true"
               }
             ],
             "footer": {
-              "text": "Deploy via GitHub Actions by ${{ github.actor }}"
+              "text": "Deploy via GitHub Actions by 👤[**${{ github.actor }}**](https://github.com/${{ github.actor }})"
             },
             "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
           }
