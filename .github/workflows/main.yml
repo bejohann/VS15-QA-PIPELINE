@@ -138,7 +138,7 @@ jobs:
           "embeds": [
           {
             "title": "Deploy do Allure Report!",
-            "description": "O Allure Report está no ar e pronto para ser visto. Click no link abaixo para detalhes.",
+            "description": "O Allure Report está no ar e pronto para ser visto. Click no link no título.",
             "url": "https://qqwewe.github.io/VS15-QA-PIPELINE",
             "color": 3066993,
             "fields": [
