@@ -15,6 +15,7 @@ Os testes são categorizados em Health Check, Contrato e Funcionais, com geraç�
 - RestAssured
 - JUnit
 - Maven
+- Lombok
 - GitHub Actions
 - Allure Reports
 - CodeQL Analysis
