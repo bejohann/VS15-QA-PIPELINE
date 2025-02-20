@@ -48,10 +48,16 @@ Os testes cobrem as principais funcionalidades da API, garantindo que:
 - O endpoint `/usuarios/{_id}` possibilite editar as informações de um usuário.
 - Usuários possam ser excluídos com sucesso utilizando `/usuarios/{_id}`.
 
+![Endpoints](src/main/resources/images/Endpoints.png)
+
 ## 📊 Relatórios de Testes
 
 Os resultados dos testes são processados pelo Allure Report e publicados automaticamente. Para acessar a versão mais recente do relatório, clique no link:
 🔗 [Allure Report](https://bejohann.github.io/VS15-QA-PIPELINE/)
 
+![Allure Results](src/main/resources/images/Allure_results.png)
+
 ## 📢 Notificações no Discord
 Após cada execução da pipeline, um relatório é enviado para um canal do Discord, informando o status de cada job executado.
+
+![Discord notification](src/main/resources/images/Discord_notification.png)
