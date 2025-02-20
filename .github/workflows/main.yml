@@ -33,6 +33,7 @@ jobs:
       - name: Run Health Check Test
         run: mvn test -Dgroups=Health-Check
       - name: Upload Allure Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-health-check
@@ -48,6 +49,7 @@ jobs:
       - name: Run Contract tests
         run: mvn test -Dgroups=Contrato
       - name: Upload Allure Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-contract-test
@@ -63,6 +65,7 @@ jobs:
       - name: Run Functional tests
         run: mvn test -Dgroups=Funcional
       - name: Upload Allure Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-functional-test
