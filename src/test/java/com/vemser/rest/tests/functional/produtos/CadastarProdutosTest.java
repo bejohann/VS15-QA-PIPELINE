@@ -23,7 +23,7 @@ public class CadastarProdutosTest {
 
         produtoClient.cadastrarProduto(LoginDataFactory.tokenAdministrador(), ProdutoDataFactory.produtoValido())
         .then()
-                .statusCode(401)
+                .statusCode(201)
                 .body(ProdutoConstants.MESSAGE, equalToIgnoringCase(ProdutoConstants.MSG_CADASTRO_SUCESSO))
                 .body(ProdutoConstants.ID, notNullValue())
         ;
